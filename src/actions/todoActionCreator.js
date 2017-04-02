@@ -1,9 +1,9 @@
 import * as ActionTypes from './constants'
 
-export const searchTodo = todo => {
+export const searchTodo = (keyword) => {
   return {
     type: 'SEARCH_TODO',
-    payload: todo
+    payload: keyword
   }
 }
 
@@ -21,13 +21,10 @@ export const actionAddTodo = todo => {
   }
 }
 
-export const actionUpdateTodo = (id, todo) => {
+export const actionUpdateTodo = (todo) => {
   return {
     type: ActionTypes.UPDATE_TODO,
-    payload:{
-      id:id,
-      title:todo
-    }
+    payload:todo
   }
 }
 
@@ -88,7 +85,7 @@ export const updateTodo = (id, title) => {
       }
     })
     .then(response => response.json())
-    .then((id, todo) => dispatch(actionUpdateTodo(id, todo)))
+    .then((id, title) => dispatch(actionUpdateTodo(id, title)))
     .catch(err =>  console.log(err))
   }
 }

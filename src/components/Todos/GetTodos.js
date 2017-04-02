@@ -24,6 +24,17 @@ class GetTodos extends Component {
     })
   }
 
+  hideEditingStatus(index) {
+    this.setState({
+      isEditingStatus: false
+    })
+  }
+
+  editTodo(index) {
+    this.props.updateTodo(index, this.state.editValue)
+    this.hideEditingStatus(index)
+  }
+
   handleChange(event) {
     this.setState({
       editValue: event.target.value
@@ -55,11 +66,17 @@ class GetTodos extends Component {
                     <td>
                       {
                         this.state.isEditingStatus && this.state.index === index ?
-                        <input type="text" onChange={(event) => this.handleChange(event)} defaultValue={todo.title} autoFocus/> : todo.title
+                        <input type="text" onChange={(event) => this.handleChange(event)} defaultValue={todo.title} autoFocus /> : todo.title
                       }
                     </td>
                     <td>
-                      <button className="waves-effect orange btn" type="button" onClick={() => { this.changeEditingStatus(index) }}>Edit</button>
+                      {
+                        this.state.isEditingStatus && this.state.index === index?
+                        (<button className="waves-effect orange btn" type="button"
+                          onClick={() => this.editTodo(todo.id, todo.title)}>Update</button>) :
+                        (<button className="waves-effect orange btn" type="button"
+                          onClick={() => this.changeEditingStatus(index)}>Edit</button>)
+                      }
                       <button className="waves-effect orange btn" type="button" onClick={() => { this.props.deleteTodo(todo.id) }}>Delete</button>
                     </td>
                   </tr>
@@ -74,7 +91,7 @@ class GetTodos extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    todos: state.todos.todos
+    todos: state.todos.filterTodos
   }
 }
 
@@ -83,7 +100,7 @@ const mapDispatchToProps = (dispatch) => {
     fetchTodos: () => dispatch(fetchTodos()),
     deleteTodo: (id) => dispatch(deleteTodo(id)),
     updateTodo: (id, todo) => dispatch(updateTodo(id, todo)),
-    searchTodo: (todo) => dispatch(searchTodo(todo))
+    searchTodo: (keyword) => dispatch(searchTodo(keyword))
   }
 }
 
