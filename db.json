@@ -1,79 +1,49 @@
 {
   "todos": [
     {
-      "id": 1,
-      "title": "Learn React",
-      "is_completed": false
+      "title": "sample one",
+      "is_completed": false,
+      "id": 1
     },
     {
-      "id": 2,
-      "title": "Learn Redux",
-      "is_completed": false
+      "title": "sample two",
+      "is_completed": false,
+      "id": 2
     },
     {
-      "id": 3,
-      "title": "Learn Javascript",
-      "is_completed": false
+      "title": "sample three",
+      "is_completed": false,
+      "id": 3
     },
     {
-      "title": "Sample",
+      "title": "sample four",
       "is_completed": false,
       "id": 4
     },
     {
-      "title": "asd",
+      "title": "sample five",
       "is_completed": false,
       "id": 5
     },
     {
-      "title": "asdasdasd",
+      "title": "sample six",
       "is_completed": false,
       "id": 6
     },
     {
-      "title": "we",
+      "title": "sample seven",
       "is_completed": false,
       "id": 7
     },
     {
-      "title": "wewe",
+      "title": "sample eight",
       "is_completed": false,
       "id": 8
     },
     {
-      "title": "weqwe",
+      "title": "sample nine",
       "is_completed": false,
       "id": 9
-    },
-    {
-      "title": "hyellow",
-      "is_completed": false,
-      "id": 10
-    },
-    {
-      "title": "qwe",
-      "is_completed": false,
-      "id": 11
-    },
-    {
-      "title": "baru",
-      "is_completed": false,
-      "id": 12
-    },
-    {
-      "title": "harusnya bener",
-      "is_completed": false,
-      "id": 13
-    },
-    {
-      "title": "beli sempak",
-      "is_completed": false,
-      "id": 14
-    },
-    {
-      "title": "mabok",
-      "is_completed": false,
-      "id": 15
     }
   ]
 }
