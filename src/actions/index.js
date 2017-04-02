@@ -1,3 +1,3 @@
-import { fetchTodos, addTodo, deleteTodo, updateTodo } from './todoActionCreator'
+import { fetchTodos, addTodo, deleteTodo, updateTodo, searchTodo } from './todoActionCreator'
 
-export { fetchTodos, addTodo, deleteTodo, updateTodo }
+export { fetchTodos, addTodo, deleteTodo, updateTodo, searchTodo }
