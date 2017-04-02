@@ -35,7 +35,7 @@ class FormTodo extends Component {
         <div className="row">
           <div className='input-field col s6'>
             <input  className="validate" type="text" placeholder="Input here . . ." onChange={(event) => this.handleChange(event)} value={this.state.currentTodo}/>
-            <label className="active">Todo</label>
+            <label className="active">Add Item</label>
           </div>
           <div className="input-field col s6">
             <button className="waves-effect waves-light btn" type="submit">
