@@ -25,16 +25,17 @@ const todoReducer = (state = initialState, action) => {
     case ActionTypes.UPDATE_TODO:
       const id = action.payload.id
       const title = action.payload.title
-      console.log('haloooo ' +  action.payload.id + ' ' + action.payload.title);
       const arrayID = state.todos.map(todo => todo.id)
       const updatedTodoIndex = arrayID.indexOf(id)
-      const updatedState = state.todos.map((todo, index) => {
+
+      const updatedTodos = state.todos.map((todo, index) => {
         if (index === updatedTodoIndex)
-          return Object.assign({}, state[updatedTodoIndex], title)
+          return Object.assign({}, state.todos[updatedTodoIndex], { title })
         else
           return todo
       })
-      return Object.assign({}, state, {updatedState})
+
+      return Object.assign({}, state, { todos: updatedTodos, filterTodos: updatedTodos })
     case ActionTypes.SEARCH_TODO:
       const filterTodos = state.todos.filter((todo, index) => {
         return todo.title.search(action.payload) !== -1
