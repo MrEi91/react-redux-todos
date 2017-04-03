@@ -34,16 +34,6 @@
       "title": "sample seven",
       "is_completed": false,
       "id": 7
-    },
-    {
-      "title": "sample eight",
-      "is_completed": false,
-      "id": 8
-    },
-    {
-      "title": "sample nine",
-      "is_completed": false,
-      "id": 9
     }
   ]
 }
