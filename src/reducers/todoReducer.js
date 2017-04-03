@@ -23,12 +23,21 @@ const todoReducer = (state = initialState, action) => {
         filterTodos: newState
       })
     case ActionTypes.UPDATE_TODO:
-
-      return
+      const id = action.payload.id
+      const title = action.payload.title
+      console.log('haloooo ' +  action.payload.id + ' ' + action.payload.title);
+      const arrayID = state.todos.map(todo => todo.id)
+      const updatedTodoIndex = arrayID.indexOf(id)
+      const updatedState = state.todos.map((todo, index) => {
+        if (index === updatedTodoIndex)
+          return Object.assign({}, state[updatedTodoIndex], title)
+        else
+          return todo
+      })
+      return Object.assign({}, state, {updatedState})
     case ActionTypes.SEARCH_TODO:
       const filterTodos = state.todos.filter((todo, index) => {
-        const patternFilter = new RegExp(action.payload, 'gi')
-        return patternFilter.test(todo.title)
+        return todo.title.search(action.payload) !== -1
       })
       return Object.assign({}, state, {filterTodos})
     default:
