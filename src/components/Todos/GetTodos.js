@@ -73,7 +73,7 @@ class GetTodos extends Component {
                       {
                         this.state.isEditingStatus && this.state.index === index?
                         (<button className="waves-effect orange btn" type="button"
-                          onClick={() => this.editTodo(todo.id, todo.title)}>Update</button>) :
+                          onClick={() => this.editTodo(todo.id, todo.title)}>Save</button>) :
                         (<button className="waves-effect orange btn" type="button"
                           onClick={() => this.changeEditingStatus(index)}>Edit</button>)
                       }
